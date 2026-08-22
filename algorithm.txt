@@ -1,0 +1,34 @@
+Variables
+    character : Character
+    length, words, vowels : Integer     
+    inWord : Boolean                    
+
+Beginning
+    length ← 0
+    words  ← 0
+    vowels ← 0
+    inWord ← False
+
+    Do
+        Read(character)
+        length ← length + 1
+
+        If character ≠ '.' Then
+            If character = ' ' Then
+                inWord ← False
+            Else
+                If inWord = False Then
+                    words ← words + 1
+                    inWord ← True
+                EndIf
+                If character ∈ {a,e,i,o,u,A,E,I,O,U} Then
+                    vowels ← vowels + 1
+                EndIf
+            EndIf
+        EndIf
+    While character ≠ '.'
+
+    Display "Characters: ", length
+    Display "Words: ", words
+    Display "Vowels: ", vowels
+End
