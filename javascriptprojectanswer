@@ -1,0 +1,39 @@
+function bitwiseAND(n1, n2) {
+  return n1 & n2;
+}
+
+function bitwiseOR(n1, n2) {
+  return n1 | n2;
+}
+
+function bitwiseXOR(n1, n2) {
+  return n1 ^ n2;
+}
+
+function redundant(str) {
+  return function() {
+    return str;
+  };
+}
+
+function getNotesDistribution(students) {
+  const validNotes = [1, 2, 3, 4, 5];
+  
+  return students
+    // 1. Extract all notes from the students into a single flat array
+    .flatMap(student => student.notes)
+    // 2. Filter out any notes that aren't 1, 2, 3, 4, or 5
+    .filter(note => validNotes.includes(note))
+    // 3. Reduce the valid notes array into an object counting their occurrences
+    .reduce((acc, note) => {
+      acc[note] = (acc[note] || 0) + 1;
+      return acc;
+    }, {});
+}
+
+
+
+
+
+
+
